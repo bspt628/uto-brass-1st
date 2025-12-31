@@ -27,6 +27,8 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-noto-sans-jp)", "sans-serif"],
         display: ["var(--font-montserrat)", "sans-serif"],
+        gothic: ["var(--font-zen-kaku)", "sans-serif"],
+        "serif-display": ["var(--font-playfair)", "serif"],
       },
       spacing: {
         section: "80px",

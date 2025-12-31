@@ -8,7 +8,7 @@ export function FixedInstruments() {
     <>
       {/* Trumpet - Top Left */}
       <motion.div
-        className="fixed top-20 left-0 sm:left-6 lg:left-8 z-10 pointer-events-none"
+        className="fixed top-[55%] left-0 z-10 pointer-events-none"
         initial={{ x: '-150%', opacity: 0, rotate: -15 }}
         animate={{ x: '0%', opacity: 0.5, rotate: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
@@ -18,7 +18,7 @@ export function FixedInstruments() {
           alt="トランペット"
           width={300}
           height={300}
-          className="object-contain w-[180px] sm:w-[160px] md:w-[200px] lg:w-[240px]"
+          className="object-contain w-[360px] sm:w-[320px] md:w-[400px] lg:w-[480px]"
           style={{
             filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))',
           }}
@@ -28,7 +28,7 @@ export function FixedInstruments() {
 
       {/* Horn - Top Right */}
       <motion.div
-        className="fixed top-16 right-0 sm:right-6 lg:right-8 z-10 pointer-events-none"
+        className="fixed top-16 right-0 z-10 pointer-events-none"
         initial={{ x: '150%', opacity: 0, rotate: 15 }}
         animate={{ x: '0%', opacity: 0.5, rotate: 0 }}
         transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
@@ -38,7 +38,7 @@ export function FixedInstruments() {
           alt="ホルン"
           width={320}
           height={320}
-          className="object-contain w-[180px] sm:w-[160px] md:w-[220px] lg:w-[260px]"
+          className="object-contain w-[360px] sm:w-[320px] md:w-[440px] lg:w-[520px]"
           style={{
             filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))',
           }}

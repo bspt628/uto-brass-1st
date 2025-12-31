@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="relative z-20 bg-text text-white py-12 sm:py-16">
       <div className="section-container">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Logo & Description */}
           <motion.div
             className="flex-1"
@@ -36,7 +36,7 @@ export function Footer() {
 
           {/* Menu & Contact - always side by side */}
           <motion.div
-            className="grid grid-cols-2 gap-8 lg:gap-12 flex-shrink-0"
+            className="grid grid-cols-2 gap-8 md:gap-12 flex-shrink-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

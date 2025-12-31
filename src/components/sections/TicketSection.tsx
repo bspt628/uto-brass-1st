@@ -39,10 +39,6 @@ export function TicketSection() {
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
 
-                <p className="text-xs text-text-light">
-                  ※ 予約なしでもご入場いただけますが、<br className="sm:hidden" />
-                  満席の場合はお断りする可能性がございます。
-                </p>
               </div>
             </Card>
           </motion.div>

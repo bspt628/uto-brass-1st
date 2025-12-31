@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Noto_Sans_JP, Montserrat } from 'next/font/google';
+import { Noto_Sans_JP, Montserrat, Zen_Kaku_Gothic_New, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { SITE_CONFIG } from '@/lib/constants';
 
@@ -12,6 +12,19 @@ const notoSansJP = Noto_Sans_JP({
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
+  display: 'swap',
+});
+
+const zenKakuGothic = Zen_Kaku_Gothic_New({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-zen-kaku',
+  display: 'swap',
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
   display: 'swap',
 });
 
@@ -65,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${notoSansJP.variable} ${montserrat.variable}`}>
+    <html lang="ja" className={`${notoSansJP.variable} ${montserrat.variable} ${zenKakuGothic.variable} ${playfairDisplay.variable}`}>
       <body className="antialiased">
         {children}
       </body>

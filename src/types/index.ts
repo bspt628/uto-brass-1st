@@ -1,6 +1,5 @@
 export interface ConcertInfo {
   title: string;
-  subtitle: string;
   date: string;
   dateDisplay: string;
   dayOfWeek: string;
@@ -41,6 +40,7 @@ export interface OrganizationInfo {
     name: string;
     nameEn: string;
     url: string;
+    description: string;
   };
   sns: SnsLinks;
   email: string;

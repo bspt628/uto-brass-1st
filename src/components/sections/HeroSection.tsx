@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Button } from '@/components/ui';
+import { Button, Card } from '@/components/ui';
 import { CONCERT_INFO } from '@/lib/constants';
 import { FloatingNotes } from '@/components/decorations';
 
@@ -32,84 +32,74 @@ export function HeroSection() {
 
           {/* Concert Info */}
           <motion.div
-            className="flex-1 text-center lg:text-left"
+            className="flex-1"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            <motion.div
-              className="flex items-center justify-center gap-4 sm:gap-6 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <Image
-                src="/images/ut-orch_logo.png"
-                alt="東京大学音楽部管弦楽団"
-                width={100}
-                height={100}
-                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24"
-              />
-              <span className="text-text text-2xl sm:text-3xl lg:text-4xl font-bold">×</span>
-              <Image
-                src="/images/utobrass-logo.png"
-                alt="UTO BRASS"
-                width={340}
-                height={113}
-                className="h-20 sm:h-24 lg:h-28 w-auto"
-              />
-            </motion.div>
+            <Card className="text-center p-6 sm:p-8" hover={false}>
+              <motion.div
+                className="flex items-center justify-center gap-4 sm:gap-6 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <Image
+                  src="/images/ut-orch_logo.png"
+                  alt="東京大学音楽部管弦楽団"
+                  width={100}
+                  height={100}
+                  className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24"
+                />
+                <span className="text-text text-2xl sm:text-3xl lg:text-4xl font-bold">×</span>
+                <Image
+                  src="/images/utobrass-logo.png"
+                  alt="UTO BRASS"
+                  width={340}
+                  height={113}
+                  className="h-20 sm:h-24 lg:h-28 w-auto"
+                />
+              </motion.div>
 
-            <motion.h1
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text font-display mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <span className="block">UTO BRASS</span>
-              <span className="block">第1回演奏会</span>
-            </motion.h1>
+              <motion.h1
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <span className="block font-serif-display tracking-wider">UTO BRASS</span>
+                <span className="block font-gothic">第1回演奏会</span>
+              </motion.h1>
 
-            <motion.p
-              className="text-lg sm:text-xl text-text-light mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              {CONCERT_INFO.subtitle}
-            </motion.p>
+              <motion.div
+                className="space-y-3 text-text mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <p className="text-xl sm:text-2xl font-semibold">
+                  {CONCERT_INFO.dateDisplay}（{CONCERT_INFO.dayOfWeek}）
+                </p>
+                <p className="text-lg">
+                  開場 {CONCERT_INFO.doorOpen} / 開演 {CONCERT_INFO.startTime}
+                </p>
+                <p className="text-lg">{CONCERT_INFO.venue.name}</p>
+                <p className="text-primary font-semibold text-lg">
+                  {CONCERT_INFO.admission}
+                </p>
+              </motion.div>
 
-            <motion.div
-              className="space-y-3 text-text mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-            >
-              <p className="text-xl sm:text-2xl font-semibold">
-                {CONCERT_INFO.dateDisplay}（{CONCERT_INFO.dayOfWeek}）
-              </p>
-              <p className="text-lg">
-                開場 {CONCERT_INFO.doorOpen} / 開演 {CONCERT_INFO.startTime}
-              </p>
-              <p className="text-lg">{CONCERT_INFO.venue.name}</p>
-              <p className="text-primary font-semibold text-lg">
-                {CONCERT_INFO.admission}
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <Button href={CONCERT_INFO.ticketUrl} external>
-                チケット予約（teket）
-              </Button>
-              <Button variant="secondary" href="#program">
-                プログラムを見る
-              </Button>
-            </motion.div>
+              <motion.div
+                className="flex justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                <Button href={CONCERT_INFO.ticketUrl} external>
+                  チケット予約（teket）
+                </Button>
+              </motion.div>
+            </Card>
           </motion.div>
         </div>
       </div>
