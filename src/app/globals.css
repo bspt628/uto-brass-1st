@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #D4A84B;
+  --color-primary-dark: #B8923F;
+  --color-primary-light: #E4C170;
+  --color-secondary: #B8D4E8;
+  --color-secondary-dark: #8FBDD6;
+  --color-secondary-light: #D6E8F2;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-background: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-noto-sans-jp), sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.8;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat), var(--font-noto-sans-jp), sans-serif;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-primary text-white font-medium rounded-lg
+           hover:bg-primary-dark active:bg-primary-dark
+           transition-all duration-200 ease-out
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-white text-primary border-2 border-primary font-medium rounded-lg
+           hover:bg-primary hover:text-white active:bg-primary-dark
+           transition-all duration-200 ease-out
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6
+           transition-shadow duration-200
+           hover:shadow-lg;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
