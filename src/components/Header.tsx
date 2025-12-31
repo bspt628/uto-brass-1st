@@ -5,10 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { NAV_ITEMS } from '@/lib/constants';
+import { useLanguage, translations } from '@/lib/i18n';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const navT = translations.nav;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,10 +66,41 @@ export function Header() {
                       : 'text-text hover:text-primary'
                   }`}
                 >
-                  {item.label}
+                  {navT[item.id as keyof typeof navT][language]}
                 </a>
               ))}
+              {/* Language Toggle */}
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-1 px-3 py-1.5 rounded-full border-2 border-primary/30 hover:border-primary transition-colors text-sm font-medium"
+                aria-label="Toggle language"
+              >
+                <span className={language === 'ja' ? 'text-primary font-bold' : 'text-text-light'}>
+                  JP
+                </span>
+                <span className="text-text-light">/</span>
+                <span className={language === 'en' ? 'text-primary font-bold' : 'text-text-light'}>
+                  EN
+                </span>
+              </button>
             </nav>
+
+            {/* Language Toggle (Mobile) + Mobile Menu Button */}
+            <div className="flex items-center gap-2 md:hidden">
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-1 px-2 py-1 rounded-full border border-primary/30 text-xs font-medium"
+                aria-label="Toggle language"
+              >
+                <span className={language === 'ja' ? 'text-primary font-bold' : 'text-text-light'}>
+                  JP
+                </span>
+                <span className="text-text-light">/</span>
+                <span className={language === 'en' ? 'text-primary font-bold' : 'text-text-light'}>
+                  EN
+                </span>
+              </button>
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -115,7 +149,7 @@ export function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
                   >
-                    {item.label}
+                    {navT[item.id as keyof typeof navT][language]}
                   </motion.a>
                 ))}
               </div>

@@ -5,8 +5,12 @@ import Image from 'next/image';
 import { Button, Card } from '@/components/ui';
 import { CONCERT_INFO } from '@/lib/constants';
 import { FloatingNotes } from '@/components/decorations';
+import { useLanguage, translations } from '@/lib/i18n';
 
 export function HeroSection() {
+  const { language } = useLanguage();
+  const t = translations.hero;
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-secondary-light/30 to-white">
       <FloatingNotes />
@@ -67,8 +71,10 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                <span className="block font-serif-display tracking-wider">UTO BRASS</span>
-                <span className="block font-gothic">第1回演奏会</span>
+                <span className="block font-bold tracking-wider whitespace-nowrap text-2xl sm:text-4xl lg:text-5xl">
+                  {t.title[language]}
+                </span>
+                <span className="block">{t.subtitle[language]}</span>
               </motion.h1>
 
               <motion.div
@@ -78,14 +84,14 @@ export function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
                 <p className="text-xl sm:text-2xl font-semibold">
-                  {CONCERT_INFO.dateDisplay}（{CONCERT_INFO.dayOfWeek}）
+                  {t.date[language]}
                 </p>
                 <p className="text-lg">
-                  開場 {CONCERT_INFO.doorOpen} / 開演 {CONCERT_INFO.startTime}
+                  {t.time[language]}
                 </p>
-                <p className="text-lg">{CONCERT_INFO.venue.name}</p>
+                <p className="text-lg">{t.venue[language]}</p>
                 <p className="text-primary font-semibold text-lg">
-                  {CONCERT_INFO.admission}
+                  {t.admission[language]}
                 </p>
               </motion.div>
 
@@ -96,7 +102,7 @@ export function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
                 <Button href={CONCERT_INFO.ticketUrl} external>
-                  チケット予約（teket）
+                  {t.ticketButton[language]}
                 </Button>
               </motion.div>
             </Card>

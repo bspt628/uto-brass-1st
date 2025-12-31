@@ -3,9 +3,15 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Twitter, Instagram, Mail } from 'lucide-react';
-import { ORGANIZATION, CONCERT_INFO, NAV_ITEMS } from '@/lib/constants';
+import { ORGANIZATION, NAV_ITEMS } from '@/lib/constants';
+import { useLanguage, translations } from '@/lib/i18n';
+import { ShareButtons } from '@/components/ui';
 
 export function Footer() {
+  const { language } = useLanguage();
+  const t = translations.footer;
+  const navT = translations.nav;
+  const aboutT = translations.about;
   const currentYear = new Date().getFullYear();
 
   return (
@@ -29,7 +35,7 @@ export function Footer() {
                 className="brightness-0 invert flex-shrink-0"
               />
               <p className="text-white/70 text-sm leading-relaxed">
-                {ORGANIZATION.description.split('\n\n')[0]}
+                {aboutT.utoBrassDescription[language].split('\n\n')[0]}
               </p>
             </div>
           </motion.div>
@@ -52,7 +58,7 @@ export function Footer() {
                       href={item.href}
                       className="text-white/70 hover:text-primary-light transition-colors text-sm"
                     >
-                      {item.label}
+                      {navT[item.id as keyof typeof navT][language]}
                     </a>
                   </li>
                 ))}
@@ -61,7 +67,7 @@ export function Footer() {
 
             {/* Contact */}
             <div>
-              <h3 className="font-bold mb-4 text-primary-light">Contact</h3>
+              <h3 className="font-bold mb-4 text-primary-light">{t.contact[language]}</h3>
               <ul className="space-y-3">
                 <li>
                   <a
@@ -99,9 +105,22 @@ export function Footer() {
           </motion.div>
         </div>
 
+        {/* Share Buttons */}
+        <motion.div
+          className="mt-8 pt-8 border-t border-white/10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <ShareButtons />
+          </div>
+        </motion.div>
+
         {/* Bottom */}
         <motion.div
-          className="mt-12 pt-8 border-t border-white/10"
+          className="mt-8 pt-8 border-t border-white/10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -122,7 +141,7 @@ export function Footer() {
                   height={24}
                   className="rounded brightness-0 invert opacity-50"
                 />
-                <span>{ORGANIZATION.parentOrg.nameEn}</span>
+                <span>{t.parentOrg[language]}</span>
               </a>
             </div>
             <p className="text-white/50 text-xs">

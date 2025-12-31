@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Noto_Sans_JP, Montserrat, Zen_Kaku_Gothic_New, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { SITE_CONFIG } from '@/lib/constants';
+import { Providers } from '@/components/Providers';
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
@@ -80,7 +81,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${notoSansJP.variable} ${montserrat.variable} ${zenKakuGothic.variable} ${playfairDisplay.variable}`}>
       <body className="antialiased">
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

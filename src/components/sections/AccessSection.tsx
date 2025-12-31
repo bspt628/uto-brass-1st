@@ -1,15 +1,24 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Train } from 'lucide-react';
+import { MapPin, Train } from 'lucide-react';
 import { SectionTitle, Card } from '@/components/ui';
 import { CONCERT_INFO } from '@/lib/constants';
+import { useLanguage, translations } from '@/lib/i18n';
 
 export function AccessSection() {
+  const { language } = useLanguage();
+  const t = translations.access;
+
+  const accessMethods = [
+    t.accessMethods.train[language],
+    t.accessMethods.bus[language],
+  ];
+
   return (
     <section id="access" className="relative py-section-sm sm:py-section-md lg:py-section overflow-hidden">
       <div className="section-container relative z-10">
-        <SectionTitle subtitle="会場案内">Access</SectionTitle>
+        <SectionTitle>{t.sectionTitle[language]}</SectionTitle>
 
         <div className="max-w-4xl mx-auto">
           {/* Venue Info Card */}
@@ -23,18 +32,14 @@ export function AccessSection() {
             <Card>
               <h3 className="font-bold text-lg mb-4 text-text flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-primary" />
-                会場
+                {t.venueLabel[language]}
               </h3>
               <p className="font-semibold text-text mb-2">
-                {CONCERT_INFO.venue.name}
+                {t.venueName[language]}
               </p>
               <p className="text-text-light text-sm">
-                {CONCERT_INFO.venue.address}
+                {t.address[language]}
               </p>
-              <div className="mt-3 flex items-center gap-2 text-text-light text-sm">
-                <Phone className="w-4 h-4" />
-                <span>{CONCERT_INFO.venue.phone}</span>
-              </div>
             </Card>
           </motion.div>
 
@@ -48,10 +53,10 @@ export function AccessSection() {
             <Card>
               <h3 className="font-bold text-lg mb-4 text-text flex items-center gap-2">
                 <Train className="w-5 h-5 text-primary" />
-                アクセス
+                {t.accessLabel[language]}
               </h3>
               <ul className="space-y-2">
-                {CONCERT_INFO.venue.access.map((access, index) => (
+                {accessMethods.map((access, index) => (
                   <li key={index} className="text-text-light text-sm flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
                     <span>{access}</span>
@@ -71,14 +76,14 @@ export function AccessSection() {
           >
             <div className="rounded-xl overflow-hidden shadow-lg">
               <iframe
-                src="https://maps.google.com/maps?q=四谷区民ホール+新宿区内藤町87&output=embed&hl=ja"
+                src={`https://maps.google.com/maps?q=四谷区民ホール+新宿区内藤町87&output=embed&hl=${language}`}
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="四谷区民ホール 地図"
+                title={language === 'ja' ? '四谷区民ホール 地図' : 'Yotsuya Kumin Hall Map'}
               />
             </div>
             <p className="text-center mt-4">
@@ -89,7 +94,7 @@ export function AccessSection() {
                 className="text-primary hover:text-primary-dark transition-colors text-sm inline-flex items-center gap-1"
               >
                 <MapPin className="w-4 h-4" />
-                Google マップで開く
+                {t.openInMaps[language]}
               </a>
             </p>
           </motion.div>

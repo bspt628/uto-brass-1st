@@ -9,7 +9,6 @@ export interface ConcertInfo {
   venue: {
     name: string;
     address: string;
-    phone: string;
     access: string[];
     googleMapsUrl: string;
     googleMapsEmbedUrl: string;
@@ -25,6 +24,7 @@ export interface ProgramItem {
   title: string;
   titleEn?: string;
   arranger?: string;
+  arrangerEn?: string;
 }
 
 export interface SnsLinks {

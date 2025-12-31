@@ -11,7 +11,6 @@ export const CONCERT_INFO: ConcertInfo = {
   venue: {
     name: '四谷区民ホール',
     address: '〒160-0014 東京都新宿区内藤町87番地 四谷区民センター9階',
-    phone: '03-3351-2118',
     access: [
       '地下鉄：東京メトロ丸ノ内線「新宿御苑前」2番出口(大木戸門)より徒歩5分',
       '都バス：品97 新宿駅西口〜品川車庫「新宿一丁目」下車',
@@ -29,11 +28,11 @@ export const PROGRAM: ProgramItem[] = [
     composer: 'G.リチャーズ',
     composerEn: 'Goff Richards',
     title: '高貴なる葡萄酒を讃えて',
-    titleEn: 'In Praise of Noble Wine',
+    titleEn: 'Homage to the Noble Grape',
   },
   {
     id: 2,
-    composer: 'ホースネス',
+    composer: 'J.ホーナー',
     composerEn: 'James Horner',
     title: 'タイタニック・ファンタジー',
     titleEn: 'Titanic Fantasy',
@@ -45,6 +44,7 @@ export const PROGRAM: ProgramItem[] = [
     title: 'スコットランドの釣鐘草',
     titleEn: 'The Bluebells of Scotland',
     arranger: '独奏 芳賀大夢',
+    arrangerEn: 'Soloist: Hiromu Haga',
   },
 ];
 

@@ -3,12 +3,16 @@
 import { motion } from 'framer-motion';
 import { SectionTitle, Card } from '@/components/ui';
 import { PROGRAM } from '@/lib/constants';
+import { useLanguage, translations } from '@/lib/i18n';
 
 export function ProgramSection() {
+  const { language } = useLanguage();
+  const t = translations.program;
+
   return (
     <section id="program" className="relative py-section-sm sm:py-section-md lg:py-section bg-secondary-light/20 overflow-hidden">
       <div className="section-container relative z-10">
-        <SectionTitle subtitle="演奏予定曲目">Program</SectionTitle>
+        <SectionTitle>{t.sectionTitle[language]}</SectionTitle>
 
         <div className="max-w-3xl mx-auto space-y-4">
           {PROGRAM.map((item, index) => (
@@ -22,22 +26,24 @@ export function ProgramSection() {
               <Card className="hover:shadow-lg">
                 <div>
                   <p className="text-text-light text-sm mb-1">
-                    {item.composer}
-                    <span className="text-xs ml-2 hidden sm:inline">
-                      / {item.composerEn}
-                    </span>
+                    {language === 'ja' ? item.composer : item.composerEn}
+                    {language === 'ja' && (
+                      <span className="text-xs ml-2 hidden sm:inline">
+                        / {item.composerEn}
+                      </span>
+                    )}
                   </p>
                   <h3 className="text-text font-semibold text-base sm:text-lg">
-                    {item.title}
+                    {language === 'ja' ? item.title : item.titleEn}
                   </h3>
-                  {item.titleEn && (
+                  {language === 'ja' && item.titleEn && (
                     <p className="text-text-light text-xs mt-1 hidden sm:block">
                       {item.titleEn}
                     </p>
                   )}
                   {item.arranger && (
                     <p className="text-text-light text-sm mt-1">
-                      {item.arranger}
+                      {language === 'ja' ? item.arranger : (item.arrangerEn || item.arranger)}
                     </p>
                   )}
                 </div>
@@ -53,8 +59,8 @@ export function ProgramSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          ほか<br />
-          ※ 曲目・曲順は変更になる場合があります
+          {t.andMore[language]}<br />
+          {t.note[language]}
         </motion.p>
       </div>
     </section>

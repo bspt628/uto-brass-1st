@@ -2,14 +2,18 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { SectionTitle, Card } from '@/components/ui';
+import { SectionTitle, Card, Button } from '@/components/ui';
 import { ORGANIZATION } from '@/lib/constants';
+import { useLanguage, translations } from '@/lib/i18n';
 
 export function AboutSection() {
+  const { language } = useLanguage();
+  const t = translations.about;
+
   return (
     <section id="about" className="relative py-section-sm sm:py-section-md lg:py-section overflow-hidden">
       <div className="section-container relative z-10">
-        <SectionTitle>About</SectionTitle>
+        <SectionTitle>{t.sectionTitle[language]}</SectionTitle>
 
         <div className="max-w-3xl mx-auto space-y-8">
           {/* UTO BRASS Card */}
@@ -37,7 +41,7 @@ export function AboutSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              {ORGANIZATION.description.split('\n\n').map((paragraph, index) => (
+              {t.utoBrassDescription[language].split('\n\n').map((paragraph, index) => (
                 <p key={index} className="text-base sm:text-lg">
                   {paragraph}
                 </p>
@@ -54,20 +58,13 @@ export function AboutSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <a
-                href={ORGANIZATION.parentOrg.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/ut-orch_logo_with_letters-2.jpg"
-                  alt={ORGANIZATION.parentOrg.name}
-                  width={400}
-                  height={80}
-                  className="h-auto max-w-full"
-                />
-              </a>
+              <Image
+                src="/images/ut-orch_logo_with_letters-2.jpg"
+                alt={ORGANIZATION.parentOrg.name}
+                width={400}
+                height={80}
+                className="h-auto max-w-full"
+              />
             </motion.div>
 
             <motion.div
@@ -77,9 +74,14 @@ export function AboutSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <p className="text-base sm:text-lg">
-                {ORGANIZATION.parentOrg.description}
+              <p className="text-base sm:text-lg mb-6">
+                {t.parentOrgDescription[language]}
               </p>
+              <div className="flex justify-center">
+                <Button href={ORGANIZATION.parentOrg.url} external variant="secondary">
+                  {t.parentOrgButton[language]}
+                </Button>
+              </div>
             </motion.div>
           </Card>
         </div>
