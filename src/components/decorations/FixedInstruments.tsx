@@ -6,9 +6,9 @@ import Image from 'next/image';
 export function FixedInstruments() {
   return (
     <>
-      {/* Trumpet - Top Left */}
+      {/* Trumpet - Bottom Left */}
       <motion.div
-        className="fixed top-[55%] left-0 z-10 pointer-events-none"
+        className="fixed bottom-0 left-0 z-10 pointer-events-none"
         initial={{ x: '-150%', opacity: 0, rotate: -15 }}
         animate={{ x: '0%', opacity: 0.5, rotate: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
