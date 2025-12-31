@@ -48,7 +48,6 @@ With the desire to "share the rich sounds and diverse expressions of brass instr
     sectionTitle: { ja: '曲目一覧', en: 'Program List' },
     subtitle: { ja: '演奏予定曲', en: 'Scheduled Pieces' },
     andMore: { ja: 'ほか数曲予定', en: 'and more' },
-    note: { ja: '※曲順は当日変更の可能性があります', en: '* Program order may change on the day of the concert' },
     soloist: { ja: '独奏', en: 'Soloist' },
   },
 

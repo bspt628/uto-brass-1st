@@ -59,8 +59,7 @@ export function ProgramSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          {t.andMore[language]}<br />
-          {t.note[language]}
+          {t.andMore[language]}
         </motion.p>
       </div>
     </section>
