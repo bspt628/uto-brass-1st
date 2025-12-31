@@ -18,7 +18,7 @@ export function FixedInstruments() {
           alt="トランペット"
           width={300}
           height={300}
-          className="object-contain w-[360px] sm:w-[320px] md:w-[800px] lg:w-[800px]"
+          className="object-contain w-[180px] sm:w-[220px] md:w-[280px] lg:w-[360px]"
           style={{
             filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))',
           }}
@@ -38,7 +38,7 @@ export function FixedInstruments() {
           alt="ホルン"
           width={320}
           height={320}
-          className="object-contain w-[360px] sm:w-[320px] md:w-[880px] lg:w-[880px]"
+          className="object-contain w-[180px] sm:w-[220px] md:w-[300px] lg:w-[380px]"
           style={{
             filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))',
           }}
