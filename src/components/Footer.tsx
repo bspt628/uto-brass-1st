@@ -2,10 +2,24 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Twitter, Instagram, Mail } from 'lucide-react';
+import { Instagram, Mail } from 'lucide-react';
 import { ORGANIZATION, NAV_ITEMS } from '@/lib/constants';
 import { useLanguage, translations } from '@/lib/i18n';
 import { ShareButtons } from '@/components/ui';
+
+// X (Twitter) icon component
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
 
 export function Footer() {
   const { language } = useLanguage();
@@ -50,7 +64,7 @@ export function Footer() {
           >
             {/* Quick Links */}
             <div>
-              <h3 className="font-bold mb-4 text-primary-light">Menu</h3>
+              <h3 className="font-bold mb-4 text-primary-light">{t.menu[language]}</h3>
               <ul className="space-y-2">
                 {NAV_ITEMS.map((item) => (
                   <li key={item.id}>
@@ -76,7 +90,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-white/70 hover:text-primary-light transition-colors text-sm"
                   >
-                    <Twitter className="w-4 h-4" />
+                    <XIcon className="w-4 h-4" />
                     <span>@utobrass</span>
                   </a>
                 </li>

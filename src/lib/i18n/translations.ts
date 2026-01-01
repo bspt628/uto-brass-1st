@@ -90,6 +90,7 @@ With the desire to "share the rich sounds and diverse expressions of brass instr
 
   // Footer
   footer: {
+    menu: { ja: 'メニュー', en: 'Menu' },
     contact: { ja: 'お問い合わせ', en: 'Contact' },
     followUs: { ja: 'SNS', en: 'Follow Us' },
     copyright: {
