@@ -1,5 +1,6 @@
 import { Header, Footer, FixedCTA } from '@/components';
 import { FixedInstruments } from '@/components/decorations';
+import { JsonLd } from '@/components/JsonLd';
 import {
   HeroSection,
   AboutSection,
@@ -11,6 +12,7 @@ import {
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <FixedInstruments />
       <Header />
       <main>

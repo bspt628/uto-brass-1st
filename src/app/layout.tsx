@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Noto_Sans_JP, Montserrat, Zen_Kaku_Gothic_New, Playfair_Display } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Providers } from '@/components/Providers';
@@ -32,7 +33,25 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   title: SITE_CONFIG.title,
   description: SITE_CONFIG.description,
+  keywords: [
+    'UTO BRASS',
+    '東京大学',
+    '東大オケ',
+    '東京大学音楽部管弦楽団',
+    'ブラスアンサンブル',
+    '金管アンサンブル',
+    'コンサート',
+    '演奏会',
+    '四谷区民ホール',
+    '入場無料',
+    'クラシック音楽',
+    'brass ensemble',
+  ],
+  authors: [{ name: 'UTO BRASS' }],
   metadataBase: new URL(SITE_CONFIG.url),
+  alternates: {
+    canonical: SITE_CONFIG.url,
+  },
   openGraph: {
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
@@ -82,6 +101,7 @@ export default function RootLayout({
     <html lang="ja" className={`${notoSansJP.variable} ${montserrat.variable} ${zenKakuGothic.variable} ${playfairDisplay.variable}`}>
       <body className="antialiased">
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
