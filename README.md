@@ -1,18 +1,18 @@
-# UTO BRASS 第1回演奏会 特設サイト
+# UTO BRASS 第 1 回演奏会 特設サイト
 
-東京大学音楽部管弦楽団 金管セクション（UTO BRASS）による第1回演奏会の特設サイトです。
+東京大学音楽部管弦楽団 金管セクション（UTO BRASS）による第 1 回演奏会の特設サイトです。
 
 ## 演奏会情報
 
-| 項目 | 内容 |
-|------|------|
-| 公演名 | UTO BRASS 第1回演奏会 |
-| 日時 | 2026年3月24日（火） |
-| 開場/開演 | 18:30 / 19:00 |
-| 会場 | 四谷区民ホール |
-| 料金 | 入場無料・全席自由 |
+| 項目      | 内容                     |
+| --------- | ------------------------ |
+| 公演名    | UTO BRASS 第 1 回演奏会  |
+| 日時      | 2026 年 3 月 24 日（火） |
+| 開場/開演 | 18:30 / 19:00            |
+| 会場      | 四谷区民ホール           |
+| 料金      | 入場無料・全席自由       |
 
-## 本番URL
+## 本番 URL
 
 https://brass.ut-orch.com
 
@@ -29,11 +29,11 @@ https://brass.ut-orch.com
 
 - レスポンシブデザイン（モバイル/タブレット/デスクトップ）
 - 多言語対応（日本語/英語）
-- SNSシェアボタン（X, LINE, Facebook）
-- Google Maps埋め込み
+- SNS シェアボタン（X, LINE, Facebook）
+- Google Maps 埋め込み
 - スクロールアニメーション
-- 固定CTAボタン（モバイル）
-- OGP対応
+- 固定 CTA ボタン（モバイル）
+- OGP 対応
 
 ## 開発
 
@@ -53,7 +53,7 @@ npm run start
 
 ## デプロイ
 
-GitHubリポジトリとVercelを連携しているため、`main`ブランチへのpushで自動デプロイされます。
+GitHub リポジトリと Vercel を連携しているため、`main`ブランチへの push で自動デプロイされます。
 
 ## ディレクトリ構成
 
@@ -83,8 +83,8 @@ src/
 
 ## 関連リンク
 
-- [チケット予約（teket）](https://teket.jp/16767/62281)
-- [X（旧Twitter）](https://x.com/utobrass)
+- [チケット予約（teket）](https://teket.jp/16767/62281?uid=h)
+- [X（旧 Twitter）](https://x.com/utobrass)
 - [Instagram](https://instagram.com/utobrass)
 - [東京大学音楽部管弦楽団](https://ut-orch.com)
 
