@@ -26,22 +26,22 @@ export const CONCERT_INFO: ConcertInfo = {
 export const PROGRAM: ProgramItem[] = [
 	{
 		id: 1,
-		composer: "G.リチャーズ",
+		composer: "ゴフ・リチャーズ",
 		composerEn: "Goff Richards",
 		title: "高貴なる葡萄酒を讃えて",
 		titleEn: "Homage to the Noble Grape",
 	},
 	{
 		id: 2,
-		composer: "J.ホーナー",
+		composer: "ジェームズ・ホーナー",
 		composerEn: "James Horner",
 		title: "タイタニック・ファンタジー",
 		titleEn: "Titanic Fantasy",
 	},
 	{
 		id: 3,
-		composer: "スコットランド民謡",
-		composerEn: "Scottish Folk Song",
+		composer: "アーサー・プライアー",
+		composerEn: "Arthur Pryor",
 		title: "スコットランドの釣鐘草",
 		titleEn: "The Bluebells of Scotland",
 		arranger: "独奏 芳賀大夢",
